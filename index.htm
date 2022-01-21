@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <script src="https://kit.fontawesome.com/0847899f66.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+
+        #slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 500px;
+            height: 500px;
+            display: none;
+        }
+
+        a {
+            color: #fff;
+            font-size: 30px;
+            padding: 20px;
+            text-decoration: none;
+            background-color: #00000080;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="slider">
+        <div><a href="javascript:prevSlide()"><i class="fas fa-chevron-left"></i></a></div>
+        <div class="slide"><img src="https://www.vw.com/content/dam/onehub_pkw/us/en/homepage/VW_NGW6_Homepage_EV.jpg">
+        </div>
+        <div class="slide"><img src="https://flexdealer-media.imgix.net/media/az1001/images/1587064935548490.jpg"></div>
+        <div class="slide"><img
+                src="https://img.freepik.com/free-photo/red-luxury-sedan-road_114579-5079.jpg?size=626&ext=jpg"></div>
+        <div class="slide"><img
+                src="https://www.cnet.com/a/img/CSTqzAl5wJ57HHyASLD-a0vS2O0=/940x528/2021/04/05/9e065d90-51f2-46c5-bd3a-416fd4983c1a/elantra-1080p.jpg">
+        </div>
+        <div class="slide"><img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Urus/4418/Lamborghini-Urus-V8/1621927166506/front-left-side-47.jpg">
+        </div>
+
+        <div><a href="javascript:nextSlide()"><i class="fas fa-chevron-right"></i></a></div>
+    </div>
+
+
+
+    <script>
+
+
+const images = document.querySelectorAll('img'); 
+
+let count = 0;
+
+setInterval(function(){ 
+
+if(count == 0) {
+  images[count].style.display = 'block';
+} else if(count == images.length ) {
+  images[count - 1].style.display = 'none';
+  images[0].style.display = 'block';
+  count = 0;
+} else {
+  images[count - 1].style.display = 'none';
+  images[count].style.display = 'block';
+}
+
+count++;
+
+}, 1000);
+
+
+
+// showSlide(count);
+
+//         function nextSlide() {
+//             count++;
+//             showSlide(count);
+//         }
+
+//         function prevSlide() {
+//             count--;
+//             showSlide(count);
+//         }
+
+//         function showSlide(slaydNomresi) {
+//             count = slaydNomresi;
+
+//             if(slaydNomresi >= slideNo){
+//                 count=0;
+//             };
+//             if (slaydNomresi<0){
+//                 count = slideNo - 1;
+//                 // 1 cixma sebebi qaranliq qaldi
+//             }
+
+//             for(i=0; i<slideNo; i++){
+//                 imgs[i].style.display = "none";
+//             }
+
+//             imgs[count].style.display="block";
+//         }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
